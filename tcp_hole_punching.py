@@ -46,7 +46,8 @@ def tcp_hole_punching(client_addr: tuple[str, int], friend_addr: tuple[str, int]
             connecting_socket.shutdown(socket.SHUT_WR)
             connecting_socket.close()
         except Exception as e:
-            print("Boohoo", e)
+            print("Boohoo 1", e)
+            connecting_socket.close()
 
     del connecting_socket
 
@@ -69,7 +70,7 @@ def tcp_hole_punching(client_addr: tuple[str, int], friend_addr: tuple[str, int]
             receiving_socket.shutdown(socket.SHUT_WR)
             receiving_socket.close()
         except Exception as e:
-            print("Boohoo", e)
+            print("Boohoo 2", e)
 
     del receiving_socket
 
